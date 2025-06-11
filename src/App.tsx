@@ -145,6 +145,7 @@ function AuthCallbackComponent() {
             // Store it (usually in localStorage or sessionStorage)
             localStorage.setItem('session_id', sessionId);
 
+
             // Redirect to your main app
             navigate('/');
         } else {
