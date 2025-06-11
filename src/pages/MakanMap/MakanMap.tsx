@@ -126,33 +126,6 @@ function FMarker({setFocusOutlet, outlet}: FMarkerProps) {
     </Marker>;
 }
 
-// const useResizeObserver = () => {
-//     const mapRef = useRef(null);
-//     const containerRef = useRef(null);
-//     console.log(`resize observer ${mapRef.current} ${containerRef.current}`);
-//     const map = mapRef.current;
-//
-//     useEffect(() => {
-//         const container = containerRef.current;
-//         const resizeObserver = new ResizeObserver(() => {
-//
-//             console.log(`resize observer effect ${map} ${container}`);
-//             if (map) {
-//                 console.log("resize observer: invalidating");
-//                 map.invalidateSize();
-//             }
-//         });
-//
-//         resizeObserver.observe(container);
-//
-//         return () => {
-//             resizeObserver.unobserve(container);
-//         };
-//     }, []);
-//
-//     return {mapRef, containerRef};
-// }
-
 export function MakanMap({initInfo}: Props) {
     const [outlets, setOutlets] = useState<Outlet[]>([]);
     const [focusOulet, setFocusOutlet] = useState<Outlet | null>();

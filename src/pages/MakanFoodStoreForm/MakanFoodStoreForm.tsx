@@ -215,7 +215,10 @@ export function OutletFormComponent({initInfo}: FormStoreProps) {
 
                 {fusedSimilarOutlets.length > 0 &&
                     <Card style={{borderRadius: "15px", position: "relative"}}>
-                        <Button icon={<CloseSquareFilled style={{color: Colors.RED_5, fontSize: "20px"}}/>}  style={{border: 0, position: "absolute", top: 0, right: 0}}></Button>
+                        <Button onClick={()=>{
+                            setSimilarOutlets([])
+                            setFusedSimilarOutlets([])
+                        }} icon={<CloseSquareFilled style={{color: Colors.RED_5, fontSize: "20px"}}/>}  style={{border: 0, position: "absolute", top: 0, right: 0}}></Button>
                         <Typography style={{fontWeight: "bold", textAlign: "start"}}> There are similar outlets.
                             Click to edit existing outlet: </Typography>
                         <Flex style={{gap: "10px", flexDirection: "row"}}>
