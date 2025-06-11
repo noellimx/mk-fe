@@ -130,6 +130,7 @@ function TaskPage({mkServerUrl}: TaskPageProps) {
     }, [refreshTasks])
 
 
+    const timeOptions = ["hour", "day", "week", "month", "year"];
     return <Flex className={"task-page-container"}
                  style={{
                      marginTop: 40,
@@ -169,7 +170,7 @@ function TaskPage({mkServerUrl}: TaskPageProps) {
                 </Form.Item>
                 <Form.Item label="Posts Age (t)" name="posts_created_within_past">
                     <Select placeholder="         " style={{width: "100px"}}>
-                        {["day", "hour", "week", "month", "year"].map((v) => {
+                        {timeOptions.map((v) => {
                             return <Select.Option value={v}>{v}</Select.Option>
                         })}
                     </Select>
@@ -261,7 +262,7 @@ function TaskPage({mkServerUrl}: TaskPageProps) {
                                    name="posts_created_within_past"
                                    required={true}>
                             <Select placeholder="         " style={{width: "100px"}}>
-                                {["hour", "day", "month", "year"].map((v) => {
+                                {timeOptions.map((v) => {
                                     return <Select.Option value={v}>{v}</Select.Option>
                                 })}
                             </Select>
